@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import { UserButton } from "@clerk/nextjs";
+
 import {
   MagnifyingGlassIcon,
   HomeIcon,
@@ -10,7 +12,7 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
   BellIcon,
   SquaresPlusIcon,
-  ChevronDownIcon
+  ChevronDownIcon,
 } from "@heroicons/react/24/solid";
 import HeaderIcon from "./HeaderIcon";
 
@@ -24,7 +26,7 @@ const Header = () => {
           alt=""
           width={40}
           height={40}
-          layout="fixed"
+       
         />
         <div className="flex ml-2 items-center rounded-full p-2 bg-gray-100">
           <MagnifyingGlassIcon className="h-6 w-6 text-gray-600" />
@@ -48,11 +50,12 @@ const Header = () => {
       {/* Right */}
       <div className="flex items-center sm:space-x-2 justify-end">
         {/* PROFILE PICTURE */}
-        <p className="font-semibold whitespace-normal">AASHIK</p>
+
         <SquaresPlusIcon className="icon" />
-         <ChatBubbleOvalLeftEllipsisIcon className="icon" /> 
+        <ChatBubbleOvalLeftEllipsisIcon className="icon" />
         <BellIcon className="icon" />
-        <ChevronDownIcon className="icon" /> 
+        <ChevronDownIcon className="icon" />
+        <UserButton afterSignOutUrl="/"/>
       </div>
     </header>
   );
